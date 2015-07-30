@@ -1,7 +1,9 @@
-var base = require('../base');
-var re = require('../re');
+var re = require('../lib/re');
 
-var Formatter = require('../formatter_base');
+var cliBase = require('cli-base');
+
+var base = cliBase.base;
+var Formatter = cliBase.Formatter;
 
 var iterateLines = base.iterateLines;
 var sub = base.sub;

@@ -1,9 +1,11 @@
 var _ = require('lodash');
 
-var base = require('../base');
-var re = require('../re');
+var re = require('../lib/re');
 
-var Formatter = require('../formatter_base');
+var cliBase = require('cli-base');
+
+var base = cliBase.base;
+var Formatter = cliBase.Formatter;
 
 var iterateLines = base.iterateLines;
 var sub = base.sub;
@@ -94,7 +96,7 @@ Formatter.JS = Formatter.create(
 
 			_lint: function(contents, lint) {
 				if (lint !== false) {
-					var linter = require('../lint');
+					var linter = require('../lib/lint');
 
 					var results = linter(contents, this.file, lint);
 
